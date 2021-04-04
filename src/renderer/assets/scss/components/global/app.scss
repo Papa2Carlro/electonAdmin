@@ -1,0 +1,33 @@
+body {
+    background: $bg;
+    font-family: 'Open Sans', sans-serif;
+
+    min-width: 100vw;
+    min-height: 100vh;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #2B2B2B;
+}
+
+::-webkit-scrollbar-track-piece {
+    background: #2B2B2B;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #5C5C66;
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-corner {
+    background-color: #999;
+}
+
+::-webkit-resizer {
+    background-color: #666;
+}

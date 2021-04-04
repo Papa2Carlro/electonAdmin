@@ -1,0 +1,166 @@
+.auth {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__body {
+        $body: &;
+        $logo: 100px;
+
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        &-logo {
+            max-width: $logo;
+            max-height: $logo;
+
+            user-select: none;
+            pointer-events: none;
+
+            margin-bottom: 25px;
+        }
+
+        &-placeholder {
+            z-index: 1;
+            position: absolute;
+
+            top: 9px;
+            left: 16px;
+
+            user-select: none;
+            pointer-events: none;
+
+            color: $grey2;
+            font-size: 16px;
+            font-weight: 600;
+            transition: .2s 0s;
+
+            &.focus {
+                color: $grey1;
+                font-size: 13px;
+                font-weight: 700;
+
+                top: -13px;
+                left: 13px;
+            }
+        }
+
+        &-input {
+            width: 280px;
+            height: 35px;
+
+            border-radius: 25px;
+            border: 2px solid $grey;
+
+            outline: none;
+            font-size: 16px;
+
+            padding: 0 10px;
+            transition: .3s 0s;
+
+            &:focus {
+                border-color: $blue;
+            }
+        }
+
+        &-error {
+            margin-top: 5px;
+
+            color: $red;
+            font-size: 13px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        &-btn {
+            width: 100%;
+            height: 40px;
+            cursor: pointer;
+
+            margin-top: 25px;
+
+            color: $white;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            border: none;
+            outline: none;
+            border-radius: 50px;
+
+            background: $blue;
+            transition: .3s 0s;
+
+            &:hover {
+                background: $blue1;
+            }
+        }
+
+        &-group {
+            position: relative;
+
+            display: flex;
+            flex-direction: column;
+
+            &.invalid {
+
+                #{$body} {
+
+                    &-placeholder {
+                        color: $red;
+                    }
+
+                    &-input {
+                        border-color: $red;
+                    }
+                }
+            }
+
+            & + & {
+                margin-top: 20px;
+            }
+        }
+    }
+
+    &__loader {
+        $circle: 80px;
+        position: absolute;
+        z-index: 999;
+
+        top: 0;
+        left: 0;
+
+        opacity: 0;
+        visibility: hidden;
+        transition: .3s 0s;
+
+        min-width: 100vw;
+        min-height: 100vh;
+        background: $grey;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &-circle {
+            width: $circle;
+            height: $circle;
+
+            border-radius: 50%;
+            border: 10px solid $white;
+
+            animation: circle 1.4s infinite linear reverse;
+            border-right-color: transparent;
+        }
+
+        &.active {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}

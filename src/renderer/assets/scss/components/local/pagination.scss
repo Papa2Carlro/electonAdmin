@@ -1,0 +1,35 @@
+.VuePagination {
+    padding-bottom: 10px;
+
+    &__pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &-item {
+            padding: 6px 10px;
+
+            border: 1px solid $blue;
+            border-radius: 6px;
+
+            cursor: pointer;
+            user-select: none;
+
+            & + & {
+                margin-left: 5px;
+            }
+
+            &:hover {
+                background: $blue1;
+            }
+
+            &.active {
+                background: $blue;
+            }
+        }
+    }
+
+    &__count {
+        display: none;
+    }
+}

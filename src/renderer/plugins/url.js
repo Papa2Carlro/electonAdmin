@@ -1,0 +1,1 @@
+export default 'Раньше тут был url'

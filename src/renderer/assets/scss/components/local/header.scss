@@ -1,0 +1,77 @@
+.header {
+    $icon: 28px;
+    flex: 0 0 35px;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: $white;
+    border-bottom: 2px solid $grey3;
+
+    padding: 0 20px;
+    box-shadow: 0 3px 20px 4px rgba($black, .15);
+
+    &__left {
+        display: flex;
+        align-items: center;
+    }
+
+    &__add {
+        height: 25px;
+        padding: 0 16px;
+
+        cursor: pointer;
+        border: none;
+        outline: none;
+
+        border-radius: 50px;
+
+        font-size: 14px;
+        font-weight: 600;
+
+        color: $white;
+        background: $blue;
+        transition: .3s 0s;
+
+        &:hover {
+            background: $blue1;
+        }
+    }
+
+    &__action {
+        display: flex;
+
+        &-item {
+            cursor: pointer;
+
+            & + & {
+                margin-left: 15px;
+            }
+
+            &.back {
+                cursor: default;
+
+                opacity: 0;
+                visibility: hidden;
+                transition: .3s 0s;
+
+                &.visible {
+                    cursor: pointer;
+
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+
+        &-icon {
+            width: $icon;
+            height: $icon;
+
+            user-select: none;
+            pointer-events: none;
+        }
+    }
+}

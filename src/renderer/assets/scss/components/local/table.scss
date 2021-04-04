@@ -1,0 +1,112 @@
+.table {
+    width: 100%;
+
+    max-height: calc(100vh - 32px);
+    min-height: calc(100vh - 32px);
+
+    overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+
+    color: $white;
+    background: $sidebar;
+
+    &__loader {
+        $circle: 100px;
+        flex: 1;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        span {
+            width: $circle;
+            height: $circle;
+
+            border-radius: 50%;
+            border: 10px solid $white;
+            border-right-color: transparent;
+
+            animation: circle 1.4s infinite linear reverse;
+        }
+    }
+
+    &__list {
+        padding: 10px 0;
+        flex: 1;
+
+        &-item {
+            padding: 10px 35px 5px 15px;
+            border-bottom: 1px solid rgba($white, .25);
+        }
+
+        &-group {
+            display: flex;
+            flex-direction: column;
+
+            & + & {
+                margin-top: 10px;
+            }
+        }
+
+        &-label {
+            color: rgba($white, .85);
+
+            font-size: 13px;
+            font-weight: 700;
+            user-select: none;
+
+            margin-left: 8px;
+            margin-bottom: 1px;
+        }
+
+        &-body {
+            width: 100%;
+            height: 30px;
+
+            border-radius: 15px;
+            border: 2px solid $grey;
+
+            outline: none;
+            font-size: 17px;
+            background: rgba($white, .9);
+
+            padding: 0 15px;
+            transition: .3s 0s;
+
+            &:focus {
+                border-color: $blue;
+            }
+        }
+
+        &-btn {
+            margin-top: 15px;
+
+            cursor: pointer;
+            padding: 5px 14px;
+
+            color: $white;
+            background: $red;
+            transition: .3s 0s;
+
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+
+            border: none;
+            outline: none;
+            border-radius: 5px;
+
+            &:hover {
+                background: $red1;
+            }
+        }
+
+        &-buttons {
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+}
